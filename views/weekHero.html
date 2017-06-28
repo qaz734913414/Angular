@@ -1,0 +1,45 @@
+<div ng-controller="weekHero">
+<table class="table">
+						<thead>
+							<tr>
+								<th>
+									英雄名称
+								</th>
+								<th>
+									英雄描述
+								</th>
+								<th>
+									最大血量
+								</th>
+								<th>
+									物理攻击
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in arr">
+								<td>
+									<a href="heroInfo/{{ item.hero_name }}">{{ item.hero_name }}</a>
+								</td>
+								<td>
+									{{ item.hero_desc }}
+								</td>
+								<td>
+									{{ item.max_hp }}
+								</td>
+								<td>
+									{{ item.physical_atk }}
+								</td>
+							</tr>
+							 
+						</tbody>
+					</table>
+					
+		<div class="col-md-12 column">
+				<ul class="pagination nofollow">
+					<li ng-repeat="item in paging">
+						<a rel="nofollow" href="#" ng-click="getNewData($index)">第 {{item + 1}} 页</a>
+					</li>
+				</ul>
+		</div>
+</div>
